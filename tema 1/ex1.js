@@ -9,7 +9,7 @@ Cerințe:
 mare decât al Luizei.
 4. Afișați în consolă cine are un BMI mai mare și care sunt valorile.*/
 
-let greutateLuiza = 52;
+let greutateLuiza = 52;//greutatea Elizei
 let inaltimeLuiza = 1.65;
 let greutateDima = 75;
 let inaltimeDima = 1.80;
