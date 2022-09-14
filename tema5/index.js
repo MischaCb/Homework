@@ -26,33 +26,33 @@ function App() {
     <div>
     <h1>Hello to my website</h1>
     <LikeButton />
-    <Header />
     <Section />
-    <Header />
     <Section />
     </div>
   );
 }
 
-
   function Header() {
     return ( 
       <div>
-        <h1>Section with list</h1>
+        <h2>Section with list</h2>
       </div>
     );
   }
 
   function Section() {
     return (
-    <div>
-      <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
-        <li><LikeButton /></li>
-      </ul>
-    </div>
+      <div>
+        <Header />
+        <section>
+          <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li><LikeButton /></li>
+          </ul>
+        </section>
+      </div>
     );
   }
 
