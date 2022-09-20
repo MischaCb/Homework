@@ -8,13 +8,19 @@ class LikeButton extends React.Component {
     this.state = { liked: false };
   }
 
-handleOnClick = () => {
-  this.setState({ liked: true });
-}
+  handleOnClick = () => {
+    this.setState({ liked: true });
+  }
 
   render() {
     if (this.state.liked) {
-      return this.props.text;
+      return (
+        <div>
+          <p style={{color: "white"}}>
+            {this.props.text}
+          </p>
+        </div>
+      );
     }
 
     return (
@@ -24,22 +30,24 @@ handleOnClick = () => {
 }
 
 function Section(props) {
-  const {id} = props;
+  const{id, footText} = props;
    return (
-    <section>
-      <p>This is a basic section on the page</p>
+    <section id={id}>
+      <p style={{color: "white"}}>This is a basic section on the page</p>
+      <SectionFooter footText={footText}/>
     </section>
   );
 }
 
 function SectionFooter (props){
-  const {footText} = props;
+  const{footText} = props;
   return (
-    <h2> {footText}, my color is yellow</h2>
+    (<h2 style={{color: "yellow"}}> {footText}, my color is yellow</h2>)
   )
 }
 
 function App() {
+
   const section1Id = "s1";
   const section2Id = "s2";
   const section1Footer = "I stay at the end of section 1";
@@ -47,13 +55,11 @@ function App() {
   const textForLikeButton = "You liked. This text comes from <App /> component!"
 
   return (
-    <div>
-      <h1>Learning react props</h1>
-        <Section id={section1Id} />
-        <SectionFooter footText={section1Footer} />
+    <div style={{backgroundColor: "black"}}>
+      <h1 style={{color: "white"}}>Learning react props</h1>
+        <Section id={section1Id} footText={section1Footer} />
         <Section id={section2Id} footText={section2Footer}/>
-        <SectionFooter footText={section2Footer}/>
-        <LikeButton text={textForLikeButton}/>
+        <LikeButton text={textForLikeButton} />
     </div>
   );
 }
